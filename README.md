@@ -22,7 +22,11 @@ Examples
 * Edit the slapchop.yml file template with your own AWS settings, and
   when you're ready just:
 
-knife slapchop -b <config-key> -i <pem file>
+knife slapchop -b config-key -i pem file
+
+Using the example config supplied:
+
+knife slapchop -b testing -i ~/.ssh/mypem.pem
 
 Requirements
 ------------
