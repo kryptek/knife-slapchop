@@ -31,6 +31,13 @@ knife slapchop -b testing -i ~/.ssh/mypem.pem
 Requirements
 ------------
 
+Gems:
+      require 'chef/knife/bootstrap'
+      require 'terminal-table/import'
+      require 'formatador'
+      require 'fog'
+      require 'yaml'
+
 An account with Amazon AWS, Opscode Chef, Knife
 
 Install

@@ -10,7 +10,6 @@
         option :identity, :long => '--identity-file FILE', :short => '-i FILE', :description => 'Full path to your SSH identity file'
 
         deps do
-          require 'ap'
           require 'fog'
           require 'yaml'
           require 'formatador'
@@ -22,7 +21,6 @@
 
         # This method will be executed when you run this knife command.
         def run
-          #ap Chef::Config.configuration
           @slapchop_config = YAML.load_file("#{File.dirname(__FILE__)}/slapchop.yml")
           @identity = config[:identity]
           @build = config[:build]
