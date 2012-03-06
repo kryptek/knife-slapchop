@@ -32,13 +32,19 @@ Requirements
 ------------
 
 Gems:
-      require 'chef/knife/bootstrap'
-      require 'terminal-table/import'
-      require 'formatador'
-      require 'fog'
-      require 'yaml'
+*      require 'chef/knife/bootstrap'
+*      require 'terminal-table/import'
+*      require 'formatador'
+*      require 'fog'
+*      require 'yaml'
 
 An account with Amazon AWS, Opscode Chef, Knife
+
+Your AWS Secret Access Key and Access Key Id need to be environmental
+variables:
+
+* ENV['AWS_SECRET_ACCESS_KEY']
+* ENV['AWS_ACCESS_KEY_ID']
 
 Install
 -------
