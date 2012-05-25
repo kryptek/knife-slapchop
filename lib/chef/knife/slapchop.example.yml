@@ -1,3 +1,15 @@
+chef_config:
+  validation_key: "/path/to/your/orgname-validator.pem"
+  client_key: "/path/to/your/chef/.chef/client.pem"
+  validation_client_name: "validation-client-name"
+  identity_file: "/default/path/of/your/.ssh/key.pem"
+  chef_server_url: "https://api.opscode.com/organizations/my-organization"
+  log_level: ":info"
+  log_location: "STDOUT"
+  node_name: "chunky-bacon"
+  cookbook_path: ["/cookbook/path/one", "/cookbook/path/two"]
+  cache_type: "BasicFile"
+
 staging:
   run_list: 'role[web], role[monitor]'
   environment: 'testing'
