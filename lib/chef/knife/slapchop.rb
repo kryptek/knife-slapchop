@@ -28,6 +28,19 @@
           @build = config[:build]
           @server_list = []
 
+          # Configure needed parameters for the chef run.
+          Chef::Config[:validation_key] = @slapchop['chef_config']['validation_key']
+          Chef::Config[:client_key] = @slapchop_config['chef_config']['client_key']
+          Chef::Config[:validation_client_name] = @slapchop_config['chef_config']['validation_client_name']
+          Chef::Config[:identity_file] = @identity
+          Chef::Config[:chef_server_url] = @slapchop_config['chef_config']['chef_server_url']
+          Chef::Config[:log_level] = @slapchop_config['chef_config']['log_level']
+          Chef::Config[:log_location] = @slapchop_config['chef_config']['log_location']
+          Chef::Config[:node_name] = @slapchop_config['chef_config']['node_name']
+          Chef::Config[:cookbook_path] = @slapchop_config['chef_config']['cookbooth_path']
+          Chef::Config[:cache_type] = @slapchop_config['chef_config']['cache_type']
+          Chef::Config[:environment] = @slapchop_config[@build]['environment']
+
           @slapchop_config[@build]['zones'].keys.each do |zone|
             for server in 1..@slapchop_config[@build]['zones'][zone]
               puts "[!] Bootstrapping server ##{server} in #{zone}"
